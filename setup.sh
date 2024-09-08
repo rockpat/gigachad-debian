@@ -17,9 +17,9 @@ echo "Do you want to install a minimal KDE-Plasma, as a blank slate to build upo
 read $answer
 
 #if $answer = yes|YES|ja; then exit
-# sudo apt install kde-plasma-desktop mpv timeshift
+# sudo apt install kde-plasma-desktop mpv timeshift grub-customizer
 
-
+# echo do you want to install my Dotfiles?
 
 ###  To Do: ###
 
