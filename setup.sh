@@ -21,6 +21,12 @@ read $answer
 
 # echo do you want to install my Dotfiles?
 
+# build-dependancies
+# sudo apt install ...
+
+# grub-btrfs
+# echo "don't forget to make a snapshot after rebooting"
+
 ###  To Do: ###
 
 # 1. Make this Script Work, LMAO (Barebones)
@@ -28,4 +34,5 @@ read $answer
 # 3. Add Content
 #  0.	add option to install steam (dependencies)
 #  1.	add option to install my dotfiles
+#  2.	add option to install flatpak (Automatically)
 # 4. … (Coming soon)
