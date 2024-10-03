@@ -13,5 +13,5 @@
 *=Coming soon
 
 ## What is the Purpose of this?
-This is a VERY niche setup script that I manly will use but if you're taste is simulare to mine, then you will probably like it aswell.
+This is a VERY niche setup script that I manly will use but if your taste is simulare to mine, then you will probably like it aswell.
 Even though now LinUtil exist, go check it out if you don't know it already, this thing has the purpose of you setting up Debian (Testing) for the Desktop, just like all the Arch Post-Postinstall but better & for Debian.
