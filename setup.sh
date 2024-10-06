@@ -47,11 +47,10 @@ install_grub_btrfs
 
 ###  To Do: ###
 
-# 1. Make this Script Work, LMAO (Barebones)
-# 2. Add a Option Menu/Dialog.
+# 1. Make this Script Work, LMAO (Barebones) ✔
+# 2. Make this Script Curlable.
 # 3. Add Content
-#  0.	add option to install steam (dependencies)
-#  1.	add option to install my dotfiles
+#  0.	[add option to install steam (dependencies)]
 #  2.	add option to install flatpak (Automatically)
 # 4. Automatically Theme Grub
 # 5. Add the Gigachad Ascii after finishing
