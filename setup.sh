@@ -52,6 +52,7 @@ install_grub_btrfs
 # 3. Add Content
 #  0.	[add option to install steam (dependencies)]
 #  2.	add option to install flatpak (Automatically)
-# 4. Automatically Theme Grub
-# 5. Add the Gigachad Ascii after finishing
-# 6. … (Coming soon)
+# 4. Add KDE Config to this script (konsave!)
+# 5. Automatically Theme Grub
+# 6. Add the Gigachad Ascii after finishing
+# 7. … (Coming soon)
