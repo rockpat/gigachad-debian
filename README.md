@@ -8,9 +8,17 @@
 ## What the fuck does it do?
 - Setups Debian for a stable & up to date Desktop use. (That's why I recommend Testing)
 - You have the option to install my dotfiles. (You can ajust the script to grab yours)
-- Breakage protection, thanks to BTRFS, Timeshift & Grub-btrfs. *
+- Breakage protection, thanks to BTRFS, Timeshift & Grub-btrfs.
 
-*=Coming soon
+## Installation
+
+Just run these commands:
+
+```sh
+git clone https://github.com/rockpat/gigachad-debian.git ~/Github/gigachad-debian
+cd ~/Github/gigachad-debian
+./setup.sh
+```
 
 ## What's the Purpose of it?
 This is a VERY niche setup script that I mainly will use but if your taste is simulare to mine, then you will probably like it aswell.

@@ -16,16 +16,16 @@ echo "
 install_dotfiles() {
     local dotfiles_repo="https://github.com/rockpat/dotfiles"
     echo "Cloning dotfiles repository..."
-    git clone "$dotfiles_repo" ~/dotfiles
+    git clone "$dotfiles_repo" ~/Github/dotfiles
     echo "Installing dotfiles..."
-    cd ~/dotfiles || exit
-    ln -s 
+    cd  ~/Github/dotfiles || exit
+    ./setup.sh 
     echo "Dotfiles installed."
 }
 
 install_grub_btrfs() {
     echo "Installing dependencies for grub-btrfs..."
-    sudo apt install -y build-essential git
+    sudo apt-get install build-essential git -y
     echo "Cloning grub-btrfs repository..."
     git clone https://github.com/Antynea/grub-btrfs.git ~/grub-btrfs
     echo "Compiling grub-btrfs..."
