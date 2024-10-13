@@ -9,7 +9,7 @@ echo "
 ╚█████╔╝██║  ██║██║  ██╗╚██████╔╝██████╔╝    ╚███╔███╔╝██║███████╗███████╗╚██████╔╝╚██████╗██║  ██║
  ╚════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝      ╚══╝╚══╝ ╚═╝╚══════╝╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝
 ---------------------------------------------------------------------------------------------------
-	    		Gigachad Automated GNU+Linux Debian (Desktop) Setup
+	    	     Gigachad Automated GNU+Linux Debian (Desktop) Setup Script
 ---------------------------------------------------------------------------------------------------
 "
 
@@ -35,6 +35,14 @@ install_grub_btrfs() {
     sudo make install
 }
 
+#kde_config() {
+# sudo apt-get install pipx 
+# pipx install konsave
+# pipx runpip konsave install setuptools # https://www.reddit.com/r/linux4noobs/comments/1dms3rs/not_specifically_linux_but_could_someone_walk_me/
+# apply my kde config with the help of konsave
+#}
+
+
 echo "Installing a minimal KDE-Plasma Desktop..."
 sudo apt-get install kde-plasma-desktop neovim mpv timeshift grub-customizer
 
@@ -43,7 +51,7 @@ if [[ "$install_dotfiles_choice" == "y" ]]; then
     install_dotfiles
 fi
 install_grub_btrfs
-
+#install_kde_config
 
 ###  To Do: ###
 
@@ -53,6 +61,6 @@ install_grub_btrfs
 #  0.	[add option to install steam (dependencies)]
 #  2.	add option to install flatpak (Automatically)
 # 4. Add KDE Config to this script (konsave!)
-# 5. Automatically Theme Grub
+# 5. Automatically Theme Grub (poly-dark)
 # 6. Add the Gigachad Ascii after finishing
 # 7. … (Coming soon)
