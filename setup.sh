@@ -39,7 +39,7 @@ install_grub_btrfs() {
 # sudo apt-get install pipx 
 # pipx install konsave
 # pipx runpip konsave install setuptools # https://www.reddit.com/r/linux4noobs/comments/1dms3rs/not_specifically_linux_but_could_someone_walk_me/
-# apply my kde config with the help of konsave
+# konsave -i /path/to/Gigachad-Debian-by_Jakub_Wieloch-V1.knsv
 #}
 
 install_finished() {
