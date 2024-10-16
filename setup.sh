@@ -35,13 +35,13 @@ install_grub_btrfs() {
     sudo make install
 }
 
-#install_kde_config() {
-# sudo apt-get install pipx 
-# pipx install konsave
-# pipx runpip konsave install setuptools # https://www.reddit.com/r/linux4noobs/comments/1dms3rs/not_specifically_linux_but_could_someone_walk_me/
-# konsave -i /path/to/Gigachad-Debian-by_Jakub_Wieloch-V1.0.knsv
-# konsave -a Gigachad-Debian-by_Jakub_Wieloch-V1.0  
-#}
+install_kde_config() {
+    sudo apt-get install pipx 
+    pipx install konsave
+    pipx runpip konsave install setuptools
+    konsave -i /path/to/Gigachad-Debian-by_Jakub_Wieloch-V1.0.knsv
+    konsave -a Gigachad-Debian-by_Jakub_Wieloch-V1.0  
+}
 
 install_finished() {
 echo "

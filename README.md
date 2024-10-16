@@ -7,7 +7,7 @@
 
 ## What the fuck does it do?
 - Setups Debian for a stable & up to date Desktop use. (That's why I recommend Testing)
-- You have the option to install my dotfiles. (You can ajust the script to grab yours)
+- You have the option to install my dotfiles. (You can adjust the script to grab yours)
 - Breakage protection, thanks to BTRFS, Timeshift & Grub-btrfs.
 
 ## Installation
