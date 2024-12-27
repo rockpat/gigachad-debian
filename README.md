@@ -1,11 +1,11 @@
-# A truely GIGACHAD Setup-Script for Debian (Stable & Testing)
+## A truely GIGACHAD Setup-Script for Debian (Stable & Testing)
 
 ### Prerequisites:
 - A minimal (server) like install of Debian (Testing/Trixie ideally), on the BTRFS filessystem.
 - Internet (if you didn't downloaded it before)
 - You like KDE ;-)
 
-## What the fuck does it do?
+### What the fuck does it do?
 - Sets up Debian for a stable & up to date Desktop use. (That's why I recommend Testing)
 - You have the option to install my dotfiles. (You can adjust the script to grab yours)
 - Breakage protection, thanks to BTRFS, Timeshift & Grub-btrfs.
