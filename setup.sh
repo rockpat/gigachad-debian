@@ -39,8 +39,8 @@ install_kde_config() {
     sudo apt-get install pipx 
     pipx install konsave
     pipx runpip konsave install setuptools
-    konsave -i /path/to/Gigachad-Debian-by_Jakub_Wieloch-V1.0.knsv
-    konsave -a Gigachad-Debian-by_Jakub_Wieloch-V1.0  
+    konsave -i /path/to/Gigachad-Debian-by_Jakub_Wieloch-V1.1.knsv
+    konsave -a Gigachad-Debian-by_Jakub_Wieloch-V1.1  
 }
 
 install_finished() {
