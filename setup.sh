@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "
 ---------------------------------------------------------------------------------------------------
@@ -41,6 +41,11 @@ install_kde_config() {
     pipx runpip konsave install setuptools
     konsave -i Gigachad-Debian-by_Jakub_Wieloch-V1.1.knsv
     konsave -a Gigachad-Debian-by_Jakub_Wieloch-V1.1  
+}
+
+install_grub_theme() {
+	sudo rm /etc/grub.d/05_debian_theme
+	# Add Poly-dark, sometime ;-)
 }
 
 install_finished() {
@@ -128,6 +133,7 @@ if [[ "$install_dotfiles_choice" == "y" ]]; then
 fi
 install_grub_btrfs
 install_kde_config
+install_grub_theme
 install_finished
 
 
