@@ -39,7 +39,7 @@ install_kde_config() {
     sudo apt-get install pipx 
     pipx install konsave
     pipx runpip konsave install setuptools
-    konsave -i /path/to/Gigachad-Debian-by_Jakub_Wieloch-V1.1.knsv
+    konsave -i Gigachad-Debian-by_Jakub_Wieloch-V1.1.knsv
     konsave -a Gigachad-Debian-by_Jakub_Wieloch-V1.1  
 }
 
@@ -120,14 +120,14 @@ echo "
 }
 
 echo "Installing a minimal KDE-Plasma Desktop..."
-sudo apt-get install kde-plasma-desktop neovim mpv timeshift grub-customizer
+sudo apt-get install kde-plasma-desktop neovim mpv timeshift grub-customizer tealdeer
 
 read -p "Do you want to install my dotfiles? (y/n): " install_dotfiles_choice
 if [[ "$install_dotfiles_choice" == "y" ]]; then
     install_dotfiles
 fi
 install_grub_btrfs
-#install_kde_config
+install_kde_config
 install_finished
 
 
