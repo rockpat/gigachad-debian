@@ -50,6 +50,12 @@ install_grub_theme() {
 	bash /tmp/install.sh --lang English
 }
 
+install_flatpak() {
+	sudo apt-get install flatpak plasma-discover-backend-flatpak
+	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+	# flatpak install breeze-dark
+}
+
 install_finished() {
 echo "
 ⢀⠐⡠⢂⠰⢀⠢⠐⠄⡂⠔⡀⠆⠰⢀⠢⠐⠄⢢⠐⡄⢢⠐⡄⠢⡐⢄⠢⡐⠄⡂⠔⡀⠆⡐⠄⠢⠐⡄⢂⠔⡠⢂⠔⢢⠐⣂⠒⡐⢂⠒⡌⠒⡌⢒⠌⡒⡌⠦⡱⢌⠲⣡⠚⡔⢣⡓⣬⠣⡝⣬⢣⡝⣎⡳⢭⡳⢭⡳⣭⢳⡭⣛⡼⣭⢯⡹⣭⠯⣝⡭
@@ -121,6 +127,7 @@ fi
 install_grub_btrfs
 install_kde_config
 install_grub_theme
+install_flatpak
 install_finished
 
 
@@ -129,6 +136,6 @@ install_finished
 # 1. Make this Script Work, LMAO (Barebones) ✔
 # 2. Make this Script Curlable.
 # 3. Add KDE Config to this script (konsave!) ✔
-# 4. Automatically Theme Grub (poly-dark)
+# 4. Automatically Theme Grub (poly-dark) ✔
 # 5. Add the Gigachad Ascii after finishing ✔
 # 6. … (Coming soon)
