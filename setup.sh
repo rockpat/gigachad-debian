@@ -126,7 +126,7 @@ fi
 
 case "$(whoami)" in
   root) PRIVILEGES="" ;;
-  *) PRIVILEGES="$PRIVILEGES" ;;
+  *) PRIVILEGES="sudo" ;;
 esac
 
 install_grub_btrfs
@@ -143,4 +143,5 @@ install_finished
 # 3. Add KDE Config to this script (konsave!) ✔
 # 4. Automatically Theme Grub (poly-dark) ✔
 # 5. Add the Gigachad Ascii after finishing ✔
-# 6. … (Coming soon)
+# 6. Add detection if stuff (like GRUB_BTRFS) is already installed!
+# 7. … (Coming soon)
