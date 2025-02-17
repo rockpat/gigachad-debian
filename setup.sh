@@ -25,18 +25,18 @@ install_dotfiles() {
 
 install_grub_btrfs() {
     echo "Installing dependencies for grub-btrfs..."
-    sudo apt-get install build-essential git -y
+    $PRIVILEGES apt-get install build-essential git -y
     echo "Cloning grub-btrfs repository..."
     git clone https://github.com/Antynea/grub-btrfs.git ~/grub-btrfs
     echo "Compiling grub-btrfs..."
     cd ~/grub-btrfs || exit
     make
     echo "Installing grub-btrfs..."
-    sudo make install
+    $PRIVILEGES make install
 }
 
 install_kde_config() {
-    sudo apt-get install pipx 
+    $PRIVILEGES apt-get install pipx 
     pipx install konsave
     pipx runpip konsave install setuptools
     konsave -i Gigachad-Debian-by_Jakub_Wieloch-V1.1.knsv
@@ -45,13 +45,13 @@ install_kde_config() {
 
 install_grub_theme() {
 	echo "Removing Debians default Grub-theme..."
-	sudo rm /etc/grub.d/05_debian_theme
+	$PRIVILEGES rm /etc/grub.d/05_debian_theme
 	wget -P /tmp https://github.com/shvchk/poly-dark/raw/master/install.sh
 	bash /tmp/install.sh --lang English
 }
 
 install_flatpak() {
-	sudo apt-get install flatpak plasma-discover-backend-flatpak
+	$PRIVILEGES apt-get install flatpak plasma-discover-backend-flatpak
 	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 	# flatpak install breeze-dark
 }
@@ -117,12 +117,17 @@ echo "
 
 # Main
 echo "Installing a minimal KDE-Plasma Desktop..."
-sudo apt-get install kde-plasma-desktop neovim mpv timeshift grub-customizer tealdeer
+$PRIVILEGES apt-get install kde-plasma-desktop neovim mpv timeshift grub-customizer tealdeer
 
 read -p "Do you want to install my dotfiles? (y/n): " install_dotfiles_choice
 if [[ "$install_dotfiles_choice" == "y" ]]; then
     install_dotfiles
 fi
+
+case "$(whoami)" in
+  root) PRIVILEGES="" ;;
+  *) PRIVILEGES="$PRIVILEGES" ;;
+esac
 
 install_grub_btrfs
 install_kde_config
