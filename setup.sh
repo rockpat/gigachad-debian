@@ -39,7 +39,7 @@ install_kde_config() {
     $PRIVILEGES apt-get install pipx 
     pipx install konsave
     pipx runpip konsave install setuptools
-    konsave -i Gigachad-Debian-by_Jakub_Wieloch-V1.1.knsv
+    konsave -i ~/Github/gigachad-debian/Gigachad-Debian-by_Jakub_Wieloch-V1.1.knsv
     konsave -a Gigachad-Debian-by_Jakub_Wieloch-V1.1  
 }
 
@@ -116,6 +116,12 @@ echo "
 }
 
 # Main
+
+case "$(whoami)" in
+  root) PRIVILEGES="" ;;
+  *) PRIVILEGES="sudo" ;;
+esac
+
 echo "Installing a minimal KDE-Plasma Desktop..."
 $PRIVILEGES apt-get install kde-plasma-desktop neovim mpv timeshift grub-customizer tealdeer
 
@@ -123,11 +129,6 @@ read -p "Do you want to install my dotfiles? (y/n): " install_dotfiles_choice
 if [[ "$install_dotfiles_choice" == "y" ]]; then
     install_dotfiles
 fi
-
-case "$(whoami)" in
-  root) PRIVILEGES="" ;;
-  *) PRIVILEGES="sudo" ;;
-esac
 
 install_grub_btrfs
 install_kde_config
