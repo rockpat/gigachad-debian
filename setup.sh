@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 echo "
 ---------------------------------------------------------------------------------------------------
@@ -9,38 +9,37 @@ echo "
 ╚█████╔╝██║  ██║██║  ██╗╚██████╔╝██████╔╝    ╚███╔███╔╝██║███████╗███████╗╚██████╔╝╚██████╗██║  ██║
  ╚════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝      ╚══╝╚══╝ ╚═╝╚══════╝╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝
 ---------------------------------------------------------------------------------------------------
-	    	     Gigachad Automated GNU+Linux Debian (Desktop) Setup Script
+	         Gigachad Automated GNU+Linux Debian (Desktop) Setup Script
 ---------------------------------------------------------------------------------------------------
 "
 
 install_dotfiles() {
-    local dotfiles_repo="https://github.com/rockpat/dotfiles"
-    echo "Cloning dotfiles repository..."
-    git clone "$dotfiles_repo" ~/Github/dotfiles
-    echo "Installing dotfiles..."
-    cd  ~/Github/dotfiles || exit
-    ./setup.sh 
-    echo "Dotfiles installed."
+	local dotfiles_repo="https://github.com/rockpat/dotfiles"
+	echo "Cloning dotfiles repository..."
+	git clone "$dotfiles_repo" ~/Github/dotfiles
+	echo "Installing dotfiles..."
+	cd  ~/Github/dotfiles || exit
+	./setup.sh 
+	echo "Dotfiles installed."
 }
 
 install_grub_btrfs() {
-    echo "Installing dependencies for grub-btrfs..."
-    $PRIVILEGES apt-get install build-essential git -y
-    echo "Cloning grub-btrfs repository..."
-    git clone https://github.com/Antynea/grub-btrfs.git ~/grub-btrfs
-    echo "Compiling grub-btrfs..."
-    cd ~/grub-btrfs || exit
-    make
-    echo "Installing grub-btrfs..."
-    $PRIVILEGES make install
+	echo "Installing dependencies for grub-btrfs..."
+	$PRIVILEGES apt-get install build-essential git -y
+	echo "Cloning grub-btrfs repository..."
+	git clone https://github.com/Antynea/grub-btrfs.git ~/Github/grub-btrfs
+	echo "Compiling & Installing grub-btrfs..."
+	cd ~/grub-btrfs || exit
+	$PRIVILEGES make install
+	$PRIVILEGES update-grub
 }
 
 install_kde_config() {
-    $PRIVILEGES apt-get install pipx 
-    pipx install konsave
-    pipx runpip konsave install setuptools
-    konsave -i ~/Github/gigachad-debian/Gigachad-Debian-by_Jakub_Wieloch-V1.1.knsv
-    konsave -a Gigachad-Debian-by_Jakub_Wieloch-V1.1  
+	$PRIVILEGES apt-get install pipx 
+	pipx install konsave
+	pipx runpip konsave install setuptools
+	konsave -i ~/Github/gigachad-debian/Gigachad-Debian-by_Jakub_Wieloch-V1.1.knsv
+	konsave -a Gigachad-Debian-by_Jakub_Wieloch-V1.1  
 }
 
 install_grub_theme() {
@@ -118,8 +117,8 @@ echo "
 # Main
 
 case "$(whoami)" in
-  root) PRIVILEGES="" ;;
-  *) PRIVILEGES="sudo" ;;
+	root) PRIVILEGES="" ;;
+	*) PRIVILEGES="sudo" ;;
 esac
 
 echo "Installing a minimal KDE-Plasma Desktop..."
@@ -127,7 +126,7 @@ $PRIVILEGES apt-get install kde-plasma-desktop neovim mpv timeshift grub-customi
 
 read -p "Do you want to install my dotfiles? (y/n): " install_dotfiles_choice
 if [[ "$install_dotfiles_choice" == "y" ]]; then
-    install_dotfiles
+	install_dotfiles
 fi
 
 install_grub_btrfs
