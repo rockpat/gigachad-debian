@@ -55,6 +55,11 @@ install_flatpak() {
 	# flatpak install breeze-dark
 }
 
+install_pipewire() {
+	$PRIVILEGES apt-get install pipewire-pulse pipewire-audio
+	$PRIVILEGES systemctl --user restart wireplumber pipewire pipewire-pulse
+}
+
 install_finished() {
 echo "
 ⢀⠐⡠⢂⠰⢀⠢⠐⠄⡂⠔⡀⠆⠰⢀⠢⠐⠄⢢⠐⡄⢢⠐⡄⠢⡐⢄⠢⡐⠄⡂⠔⡀⠆⡐⠄⠢⠐⡄⢂⠔⡠⢂⠔⢢⠐⣂⠒⡐⢂⠒⡌⠒⡌⢒⠌⡒⡌⠦⡱⢌⠲⣡⠚⡔⢣⡓⣬⠣⡝⣬⢣⡝⣎⡳⢭⡳⢭⡳⣭⢳⡭⣛⡼⣭⢯⡹⣭⠯⣝⡭
@@ -144,4 +149,5 @@ install_finished
 # 4. Automatically Theme Grub (poly-dark) ✔
 # 5. Add the Gigachad Ascii after finishing ✔
 # 6. Add detection if stuff (like GRUB_BTRFS) is already installed!
-# 7. … (Coming soon)
+# 7. Nvidia GPU driver installation/?
+# 8. … (Coming soon)
