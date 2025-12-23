@@ -29,7 +29,7 @@ install_grub_btrfs() {
 	echo "Cloning grub-btrfs repository..."
 	git clone https://github.com/Antynea/grub-btrfs.git ~/Github/grub-btrfs
 	echo "Compiling & Installing grub-btrfs..."
-	cd ~/grub-btrfs || exit
+	cd ~/Github/grub-btrfs || exit
 	$PRIVILEGES make install
 	$PRIVILEGES update-grub
 }
@@ -138,6 +138,7 @@ install_grub_btrfs
 install_kde_config
 install_grub_theme
 install_flatpak
+install_pipewire
 install_finished
 
 
